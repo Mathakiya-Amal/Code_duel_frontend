@@ -212,7 +212,7 @@ const ChallengePage: React.FC = () => {
               </Button>
             )}
 
-            {!isMember && (
+            {!isMember && !challenge.isPrivate && (
               <Button
                 variant="outline"
                 size="sm"

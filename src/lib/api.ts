@@ -74,6 +74,7 @@ interface ChallengeResponse {
   endDate: string;
   status: string;
   ownerId: string;
+  isPrivate?: boolean;
   createdAt: string;
   members?: any[];
 }

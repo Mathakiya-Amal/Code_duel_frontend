@@ -133,6 +133,7 @@ const InviteUserDialog: React.FC<InviteUserDialogProps> = ({
       setResults([]);
       setIsSearching(false);
       setInvitedIds(new Set());
+      setSendingId(null);
     }
     onOpenChange(value);
   };
