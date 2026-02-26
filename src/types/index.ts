@@ -11,37 +11,17 @@ export interface User {
 export interface Challenge {
   id: string;
   name: string;
-  description: string;
-  minSubmissionsPerDay: number;
-  difficultyFilter: string[];
-  uniqueProblemConstraint: boolean;
-  penaltyAmount: number;
+  dailyTarget: number;
+  difficulty: 'easy' | 'medium' | 'hard' | 'any';
+  penaltyAmount?: number;
   startDate: string;
   endDate: string;
-  status: 'ACTIVE' | 'PENDING' | 'COMPLETED' | 'CANCELLED';
-  ownerId: string;
-  createdAt: string;
-  members?: ChallengeMember[];
-  /** Backend field — matches ChallengeVisibility enum: "PUBLIC" | "PRIVATE" */
-  visibility?: 'PUBLIC' | 'PRIVATE';
-}
-
-export interface ChallengeInvite {
-  id: string;
-  challengeId: string;
-  challengeName: string;
-  senderId: string;
-  senderName: string;
-  receiverId: string;
-  status: 'pending' | 'accepted' | 'rejected';
-  createdAt: string;
-}
-
-export interface UserSearchResult {
-  id: string;
-  username: string;
-  leetcodeUsername: string;
-  avatar?: string;
+  createdBy: string;
+  members: ChallengeMember[];
+  isActive: boolean;
+  difficultyFilter?: string[];
+  status?: "ACTIVE" | "PENDING" | "COMPLETED" | "CANCELLED";
+  minSubmissionsPerDay?: number;
 }
 
 export interface ChallengeMember {
